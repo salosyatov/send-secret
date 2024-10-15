@@ -24,27 +24,41 @@
     data-knobs-ga-enabled-value="<%= ENV.key?('GA_ENABLE') %>">
 <%= render partial: "shared/topnav" %>
 <%= form_for @push, data: { action: 'form#submit' } do |f| %>
-    <div class='row'>
-        <div class='col'>
-            <%= f.text_area(:payload, { class: "form-control",
-                                        rows: 6,
-                                        placeholder: _('Enter the Password or Text to push...'),
-                                        autocomplete: "off",
-                                        spellcheck: "false",
-                                        autofocus: true,
-                                        required: true,
-                                        "data-pwgen-target" => "payloadInput",
-                                        "data-passwords-target" => "payloadInput",
-                                        "data-action" => "input->passwords#updateCharacterCount"
-                                         }) %>
-            <div class='position-relative'>
-                <div id="the-count" class="position-absolute bottom-0 end-0 m-2 px-3 opacity-75">
-                    <span id="current" data-passwords-target="currentChars">0</span>
-                    <span id="maximum" data-passwords-target="maximumChars">/ 1048576 <%= _('Characters') %></span>
-                </div>
+<div class='row'>
+    <div class='col'>
+        <%= f.text_area(:payload, { class: "form-control",
+                                    rows: 6,
+                                    placeholder: _('Enter the Password or Text to push...'),
+                                    autocomplete: "off",
+                                    spellcheck: "false",
+                                    autofocus: true,
+                                    required: true,
+                                    "data-pwgen-target" => "payloadInput",
+                                    "data-passwords-target" => "payloadInput",
+                                    "data-action" => "input->passwords#updateCharacterCount"
+                                    }) %>
+        <div class='position-relative'>
+            <div id="the-count" class="position-absolute bottom-0 end-0 m-2 px-3 opacity-75">
+                <span id="current" data-passwords-target="currentChars">0</span>
+                <span id="maximum" data-passwords-target="maximumChars">/ 1048576 <%= _('Characters') %></span>
             </div>
         </div>
     </div>
+    <div class='col-auto d-flex flex-column'>
+        <div class="btn-group mb-5" role="group" aria-label="Password Generator button group with nested dropdown">
+            <button class="btn btn-primary mb-2" type="button"
+                id='generate_password'
+                data-knobs-target="generatePasswordButton"
+                data-action="pwgen#producePassword passwords#updateCharacterCount"> <%= _('Generate Password') %></button>
+            <button class="btn btn-primary mb-2" type="button" id='configure_generator'
+                data-action="pwgen#configureGenerator"
+                data-bs-toggle="modal" data-bs-target="#configureModal">
+                <em class="bi bi-gear"></em>
+            </button>
+        </div>
+        <button class="btn btn-primary mb-2" type="submit" data-form-target="pushit" data-disable-with="Pushing..."><%= _('Push It!') %></button>
+    </div>
+</div>
     <div class='row'>
         <div class='col-12 col-sm-8 p-3'>
             <div class='row'>
@@ -136,20 +150,6 @@
             </div>
         </div>
         <div class='col-12 col-sm-4 p-3 mt-3'>
-            <div class="row mb-3">
-                <div class="btn-group mb-3" role="group" aria-label="Password Generator button group with nested dropdown">
-                    <button class="btn btn-secondary w-75" type="button"
-                        id='generate_password'
-                        data-knobs-target="generatePasswordButton"
-                        data-action="pwgen#producePassword passwords#updateCharacterCount"><em class="bi bi-cpu"></em> <%= _('Generate Password') %></button>
-                    <button class="btn btn-secondary" type="button" id='configure_generator'
-                        data-action="pwgen#configureGenerator"
-                        data-bs-toggle="modal" data-bs-target="#configureModal">
-                        <em class="bi bi-gear"></em>
-                    </button>
-                </div>
-                <p class='fst-italic fw-light'><%= _('Use the button above to generate a random password.') %></p>
-            </div>
             <% if user_signed_in? %>
                 <div class='row mb-3'>
                     <div class="input-group">
@@ -162,18 +162,10 @@
                     <div class="form-text" id="basic-addon4"><%= _('Encrypted and visible only to you') %></div>
                 </div>
             <% end %>
-            <div class='row my-3 px-5'> <hr> </div>
             <div class='row mb-3'>
                 <p class='fst-italic'><%= _('Tip: Only enter a password into the box.  Other identifying information can compromise security.') %></p>
                 <p class='fst-italic fw-light'><%= _('All passwords are encrypted prior to storage and are available to only those with the secret link.  Once expired, encrypted passwords are unequivocally deleted from the database.') %></p>
             </div>
-        </div>
-    </div>
-    <div class='row'>
-        <div class='col'>
-            <p class='my-3'>
-                <button class="form-control btn btn-primary" type="submit" data-form-target="pushit" data-disable-with="Pushing..."><%= _('Push It!') %></button>
-            </p>
         </div>
     </div>
 <% end %>

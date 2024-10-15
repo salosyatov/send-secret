@@ -591,13 +591,13 @@ brand:
   #
   # Environment variable override: PWP__BRAND__TITLE='Acme Corp.'
   #
-  title: 'Password Pusher'
+  title: 'Send-Secret.ru'
 
   ### Site Tagline
   #
   # Environment variable override: PWP__BRAND__TAGLINE='Security First'
   #
-  tagline: 'Go Ahead.  Email Another Password.'
+  tagline: 'Send passwords securely'
 
   ### Site Disclaimer
   #
@@ -779,7 +779,7 @@ feedback:
   # Feedback form.
   #
   # Environment Variable Override: PWP__FEEDBACK__EMAIL='my@email.com'
-  email: 'feedback@pwpush.com'
+  email: 'feedback@salosyatov.ru'
 
 ### Docker Pre-compilation
 #
@@ -954,4 +954,8 @@ log_level: :warn
 # In containers, it is usually desired to log to stdout
 # instead of using log files (e.g. log/production.log).
 #
-log_to_stdout: false
+log_to_stdout: true
+
+ads:
+  url: 'https://example.com/ad'
+

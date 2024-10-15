@@ -591,13 +591,13 @@ brand:
   #
   # Environment variable override: PWP__BRAND__TITLE='Acme Corp.'
   #
-  title: 'Password Pusher'
+  title: 'Send-Secret.ru'
 
   ### Site Tagline
   #
   # Environment variable override: PWP__BRAND__TAGLINE='Security First'
   #
-  tagline: 'Go Ahead.  Email Another Password.'
+  tagline: 'Send passwords securely'
 
   ### Site Disclaimer
   #
