@@ -1,0 +1,20 @@
+name: CI/CD Pipeline
+
+on:
+  workflow_dispatch:  # Allows you to trigger the workflow manually in the GitHub Actions interface
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: |
+          docker-compose build
+          
+      - name: Down and Up
+        run: |
+          docker-compose down
+          docker-compose up -d
