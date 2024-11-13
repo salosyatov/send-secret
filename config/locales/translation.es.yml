@@ -375,9 +375,19 @@ es:
         update: Actualizar
         we_need_your_current_password_to_confirm_your_changes: necesitamos tu contraseña
           actual para confirmar los cambios
+        cancel_my_account_confirm_description_html: Esto borrará permanentemente todos
+          los datos asociados a tu cuenta. Esta acción no se puede deshacer.<br/><br/>
+          Para verificar, escriba su dirección de correo electrónico para confirmar
+          y eliminar su cuenta.
+        cancel_my_account_description: Esto borrará permanentemente todos los datos
+          asociados a tu cuenta. Esta acción no se puede deshacer.
+        saving: Ahorro...
       new:
         sign_up: Registrarse
         account_or_team_name: Nombre de cuenta o equipo
+        login_html: O %{link}
+        submitting: Sumisión...
+        terms_html: Acepto %{terms} y %{privacy}
       preferred_language: Idioma preferido
     unlocks:
       send_instructions: Vas a recibir un correo con instrucciones para desbloquear
@@ -402,6 +412,10 @@ es:
     sessions:
       new:
         sign_in: Iniciar sesión
+        sign_up_html: O %{link}
+      already_signed_out: Sesión finalizada.
+      signed_in: Sesión iniciada.
+      signed_out: Sesión finalizada.
     shared:
       links:
         back: Atrás
@@ -413,6 +427,7 @@ es:
         sign_in: Iniciar sesión
         sign_in_with_provider: Iniciar sesión con %{provider}
         sign_up: Registrarse
+        redirecting: Redirigiendo...
       minimum_password_length:
         one: "(%{count} caracteres como mínimo)"
         other: "(%{count} caracteres como mínimo)"
@@ -601,27 +616,6 @@ es:
           OPENAI_API_KEY o Translation.openai_api_key en config/i18n-tasks.yml. Obtenga
           la clave en https://openai.com/.
         no_results: OpenAI no arrojó resultados.
-  routes:
-    users: usuarios
-    passwords: contraseñas
-    files: archivos
-    urls: URL
-    sessions: sesiones
-    registrations: inscripciones
-    unlocks: desbloquea
-    feedbacks: comentarios
-    pages: paginas
-    new: nuevo
-    edit: editar
-    update: actualizar
-    destroy: destruir
-    create: crear
-    expired: Caducado
-    active: activo
-    audit: auditoría
-    access: acceso
-    passphrase: frase de contraseña
-    preview: avance
   views:
     pagination:
       first: "&laquo; Primera"
@@ -654,6 +648,7 @@ es:
       errors: "%{pluralized_errors} prohibió que se guardara este %{resource_name}:"
     navigation:
       back_to_app: Volver a la aplicación
+      worker: Trabajos de fondo
     search:
       clear: Borrar búsqueda
       label: Buscar %{resource}
@@ -913,6 +908,10 @@ es:
       pulls: Solicitudes ᴮᴱᵀᴬ
     right_nav:
       features: Características
+    push_expiration:
+      will_expire_in: 'Los enlaces de descarga de archivos anteriores caducarán en:'
+      you_can_refresh: Puede actualizar la página para regenerar nuevos enlaces de
+        descarga si aún quedan vistas.
   audit_logs:
     audit_log:
       log_created: Push creado en %{date} por %{user}
@@ -1773,3 +1772,4 @@ es:
     forbidden: Prohibido
     not_found: Extraviado
     share: Compartir
+    expired: Expirado

@@ -365,9 +365,19 @@ sr:
         update: ажурирање
         we_need_your_current_password_to_confirm_your_changes: потребна нам је ваша
           тренутна лозинка да потврдимо ваше промене
+        cancel_my_account_confirm_description_html: Ово ће трајно избрисати све податке
+          повезане са вашим налогом. Ова радња се не може опозвати.<br/><br/> Да бисте
+          потврдили, унесите своју адресу е-поште да бисте потврдили и избрисали свој
+          налог.
+        cancel_my_account_description: Ово ће трајно избрисати све податке повезане
+          са вашим налогом. Ова радња се не може опозвати.
+        saving: Чување...
       new:
         sign_up: Пријави се
         account_or_team_name: Назив налога или тима
+        login_html: Или %{link}
+        submitting: Слање...
+        terms_html: Прихватам %{terms} и %{privacy}
       preferred_language: Језик којем дајете предност
     unlocks:
       send_instructions: U roku od nekoliko minuta ćete primiti ePoruku sa uputstvom
@@ -391,6 +401,10 @@ sr:
     sessions:
       new:
         sign_in: Пријавите се
+        sign_up_html: Или %{link}
+      already_signed_out: Uspešno ste se odjavili.
+      signed_in: Uspešno ste se prijavili.
+      signed_out: Uspešno ste se odjavili.
     shared:
       links:
         back: Назад
@@ -400,6 +414,7 @@ sr:
         sign_in: Пријавите се
         sign_in_with_provider: Пријавите се помоћу %{provider}
         sign_up: Пријави се
+        redirecting: Преусмеравање...
       minimum_password_length:
         one: "(минимум знакова %{count})"
         other: "(минимално %{count} знакова)"
@@ -582,27 +597,6 @@ sr:
           или транслатион.опенаи_апи_кеи у цонфиг/и18н-таскс.имл. Набавите кључ на
           хттпс://опенаи.цом/.
         no_results: ОпенАИ није дао резултате.
-  routes:
-    users: корисника
-    passwords: лозинке
-    files: фајлови
-    urls: урлс
-    sessions: сесије
-    registrations: регистрације
-    unlocks: откључава
-    feedbacks: повратне информације
-    pages: странице
-    new: Нова
-    edit: Уредити
-    update: ажурирање
-    destroy: уништити
-    create: Креирај
-    expired: истекао
-    active: активан
-    audit: ревизија
-    access: приступ
-    passphrase: приступна фраза
-    preview: превиев
   views:
     pagination:
       first: "\" Први"
@@ -635,6 +629,7 @@ sr:
       errors: "%{pluralized_errors} је забранио чување овог %{resource_name}:"
     navigation:
       back_to_app: Назад на апликацију
+      worker: Бацкгоунд Јобс
     search:
       clear: Обриши претрагу
       label: Претражи %{resource}
@@ -881,6 +876,10 @@ sr:
       pulls: Захтеви ᴮᴱᵀᴬ
     right_nav:
       features: Карактеристике
+    push_expiration:
+      will_expire_in: 'Горе наведене везе за преузимање датотека ће истећи за:'
+      you_can_refresh: Можете да освежите страницу да бисте поново генерисали нове
+        везе за преузимање ако прикази остану.
   audit_logs:
     audit_log:
       log_created: Пусх креирао %{user} на %{date}
@@ -1688,3 +1687,4 @@ sr:
     forbidden: Забрањено
     not_found: Није пронађено
     share: Објави
+    expired: Истекао

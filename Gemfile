@@ -43,7 +43,7 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem "erb_lint", "~> 0.6.0"
+  gem "erb_lint", "~> 0.7.0"
   gem "standardrb", "~> 1.0"
 end
 
@@ -73,7 +73,7 @@ gem "sass-rails", "~> 6.0", ">= 6.0.0"
 gem "terser", "~> 1.2"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "bootstrap", "5.2.3"
-gem "json", "~> 2.7" # Legacy carry-over
+gem "json", "~> 2.8" # Legacy carry-over
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
@@ -101,7 +101,7 @@ gem "invisible_captcha", "~> 2.3"
 
 gem "devise-i18n"
 gem "i18n-tasks", "~> 1.0.14" # , group: :development
-gem "rails-i18n", "~> 7.0.9"
+gem "rails-i18n", "~> 7.0.10"
 gem "translation"
 
 # For File Uploads
@@ -117,7 +117,7 @@ gem "mysql2"
 gem "pg"
 gem "sqlite3", force_ruby_platform: true
 
-group :production do
+group :production, :development do
   gem "rack-attack"
 end
 
@@ -128,3 +128,5 @@ gem "rqrcode", "~> 2.2"
 gem "turnout2024", require: "turnout"
 
 gem "solid_queue", "~> 1.0"
+
+gem "mission_control-jobs", "~> 0.5.0"

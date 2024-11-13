@@ -368,9 +368,18 @@ hu:
         update: Módosítás
         we_need_your_current_password_to_confirm_your_changes: a változtatás végrehajtásához
           szükséges a jelenlegi jelszó
+        cancel_my_account_confirm_description_html: Ezzel véglegesen törli a fiókjához
+          kapcsolódó összes adatot. Ez a művelet nem vonható vissza.<br/><br/> Az
+          ellenőrzéshez írja be e-mail címét a megerősítéshez és a fiók törléséhez.
+        cancel_my_account_description: Ezzel véglegesen törli a fiókjához kapcsolódó
+          összes adatot. Ez a művelet nem vonható vissza.
+        saving: Megtakarítás...
       new:
         sign_up: Regisztráció
         account_or_team_name: fiók vagy csapat neve
+        login_html: Vagy %{link}
+        submitting: Beküldés...
+        terms_html: Elfogadom az %{terms} és %{privacy}
       preferred_language: Preferált nyelv
     unlocks:
       send_instructions: Néhány percen belül kapni fog egy utasításokat tartalmazó
@@ -394,6 +403,10 @@ hu:
     sessions:
       new:
         sign_in: Belépés
+        sign_up_html: Vagy %{link}
+      already_signed_out: A kijelentkezés már megtörtént.
+      signed_in: Sikeres bejelentkezés.
+      signed_out: A kijelentkezés sikeres.
     shared:
       links:
         back: Vissza
@@ -403,6 +416,7 @@ hu:
         sign_in: Belépés
         sign_in_with_provider: "%{provider} belépés"
         sign_up: Regisztráció
+        redirecting: Átirányítás...
       minimum_password_length:
         one: "(minimum %{count} karakter)"
         other: "(minimum %{count} karakter)"
@@ -590,27 +604,6 @@ hu:
           változóval vagy a translation.openai_api_key-vel a config/i18n-tasks.yml
           fájlban. Szerezze meg a kulcsot a https://openai.com/ oldalon.
         no_results: Az OpenAI nem adott eredményt.
-  routes:
-    users: felhasználókat
-    passwords: jelszavakat
-    files: fájlokat
-    urls: URL-ek
-    sessions: üléseken
-    registrations: regisztrációk
-    unlocks: kinyit
-    feedbacks: visszajelzéseket
-    pages: oldalakat
-    new: új
-    edit: szerkeszteni
-    update: frissítés
-    destroy: elpusztítani
-    create: teremt
-    expired: lejárt
-    active: aktív
-    audit: könyvvizsgálat
-    access: hozzáférés
-    passphrase: jelmondat
-    preview: előnézet
   views:
     pagination:
       first: "&laquo; Első"
@@ -643,6 +636,7 @@ hu:
       errors: "%{pluralized_errors} megtiltotta az %{resource_name} mentését:"
     navigation:
       back_to_app: Vissza az alkalmazáshoz
+      worker: Háttér állások
     search:
       clear: Keresés törlése
       label: Keresés %{resource}
@@ -898,6 +892,10 @@ hu:
       pulls: Kérések ᴮᴱᵀᴬ
     right_nav:
       features: Jellemzők
+    push_expiration:
+      will_expire_in: 'A fenti fájlletöltési linkek a következő napon lejárnak:'
+      you_can_refresh: Frissítheti az oldalt az új letöltési hivatkozások újragenerálásához,
+        ha a nézetek megmaradnak.
   audit_logs:
     audit_log:
       log_created: Push létrehozta %{date} oldalon, %{user}
@@ -1724,3 +1722,4 @@ hu:
     forbidden: Tiltott
     not_found: Nem található
     share: Ossza meg
+    expired: Lejárt
