@@ -15,7 +15,7 @@ x-op-app-environment: &x-op-app-environment
     #   PWP__PW__RETRIEVAL_STEP_DEFAULT: "true"
     #
     # PosgreSQL database URL is default.  Comment out for Ephemeral SQLite3.
-    DATABASE_URL: 'postgres://pwpush_user:pwpush_passwd@db:54321/pwpush_db'
+    DATABASE_URL: 'postgres://pwpush_user:pwpush_passwd@db:5432/pwpush_db'
     GA_ENABLE: 1
     GA_ACCOUNT: "GTM-N4DLLS8B"
     YANDEX_METRIKA_COUNTER_ID: "98690876"
@@ -59,9 +59,7 @@ services:
   # --> Comment this worker out if you switch to an ephemeral backed instance!
   #     It requires a shared database with the main Password Pusher application.
   worker:
-    build:
-      dockerfile: Dockerfile
-      context: .
+    image: docker.io/pglombardo/pwpush-worker:latest
     restart: unless-stopped
     <<: *x-op-app-environment
     depends_on:
@@ -69,9 +67,6 @@ services:
       - db
     links:
      - db:db
-    environment:
-     - PWP_WORKER:true
-    entrypoint: ["./containers/docker/worker-entrypoint.sh"]
 
   # CaddyServer as a reverse proxy with automatic HTTPS
   ssl_proxy:
