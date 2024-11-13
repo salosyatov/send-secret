@@ -74,7 +74,7 @@ services:
       restart: unless-stopped
       ports:
         - "80:80"
-        - "8443:443"
+        - "4443:443"
       volumes:
         # Make sure to edit the contents of this Caddyfile
         - ./Caddyfile:/etc/caddy/Caddyfile
