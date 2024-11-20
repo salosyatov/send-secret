@@ -19,7 +19,7 @@
 # Environment variable override:
 # PWP__ENABLE_URL_PUSHES='false'
 #
-enable_url_pushes: false
+enable_url_pushes: true
 
 ### File Uploads
 #
@@ -34,7 +34,7 @@ enable_url_pushes: false
 # Environment variable override:
 # PWP__ENABLE_FILE_PUSHES='false'
 #
-enable_file_pushes: false
+enable_file_pushes: true
 
 ### Logins (User accounts)
 #
