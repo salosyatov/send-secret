@@ -17,7 +17,7 @@ x-op-app-environment: &x-op-app-environment
     # PosgreSQL database URL is default.  Comment out for Ephemeral SQLite3.
     DATABASE_URL: 'postgres://pwpush_user:pwpush_passwd@db:5432/pwpush_db'
     GA_ENABLE: 1
-    GA_ACCOUNT: "GTM-N4DLLS8B"
+    GA_ACCOUNT: "6254755914"
     YANDEX_METRIKA_COUNTER_ID: "98690876"
 
     #
